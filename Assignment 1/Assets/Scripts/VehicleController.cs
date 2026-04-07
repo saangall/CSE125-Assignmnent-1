@@ -8,6 +8,7 @@ public class VehicleController : MonoBehaviour
     float desired_rotation;
     public float impulse = -2;
     public float turnrate = 4;
+    public CheckpointController target;
     void Start()
     {
         
