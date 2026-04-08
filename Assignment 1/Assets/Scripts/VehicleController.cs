@@ -7,7 +7,7 @@ public class VehicleController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     float desired_acceleration;
     float desired_rotation;
-    public float impulse = -60;
+    public float impulse = -6;
     public float turnrate = 5;
     public CheckpointController target;
     float starttime;
@@ -28,7 +28,7 @@ public class VehicleController : MonoBehaviour
         //    transform.Rotate(0, dx/2, 0);
         //}
         // For turning, use the left and right arrow keys
-        GetComponent<Rigidbody>().transform.Rotate(0, desired_rotation*turnrate, 0);
+        GetComponent<Rigidbody>().transform.Rotate(0, desired_rotation/turnrate, 0);
         timelbl.text = string.Format("Current time: {0:F2} seconds", (Time.time - starttime));
     }
 
