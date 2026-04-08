@@ -18,6 +18,12 @@ public class CheckpointController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        Debug.Log("Trigger enter" + other.transform.name);
+        VehicleController vehicle = other.gameObject.GetComponent<VehicleController>();
+        if(vehicle != null){
+            next.left.materials[0].color = Color.red;
+            next.right.materials[0].color = Color.red;
+            left.materials[0].color = Color.white;
+            right.materials[0].color = Color.white;
+        }
     }
 }
